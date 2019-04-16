@@ -20,20 +20,20 @@ def readData():
         Longitude = np.zeros((total_row,))
         Population = np.zeros((total_row,))
         for row in reader:
-            Cities[index] = ((row[0]))
+            #Cities[index] = str(row[0])
             Latitude[index] = ((float(row[1]) - 25)/(47 - 25))
             Longitude[index] = ((float(row[2]) - 71)/(122 - 71))
-            Population[index] = int(row[3])
+            Population[index] = (float(row[3]) * (10 ** 6))
             line_count += 1
             index += 1
         print("Cities: ")
-        print(Cities)
+        #print(Cities)
         print("Latitude: ")
         print(Latitude)
         print("Longitude: ")
         print(Longitude)
         print("Population: ")
         print(Population)
-    return (Cities, Latitude, Longitude, Population)
+    return (Latitude, Longitude, Population)
         
-(Cities, Latitude, Longitude, Population) = readData()
+(Latitude, Longitude, Population) = readData()

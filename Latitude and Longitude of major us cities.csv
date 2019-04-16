@@ -1,39 +1,39 @@
-Phoenix,33,112
-Tucson,32,110
-Little Rock,34,92
-Los Angeles,33,118
-San Jose,37,121
-San Diego,32,117
-San Fransisco,37,122
-Denver,39,104
-Washington D.C.,38,77
-Miami,25,80
-Tampa,27,82
-Atlanta,33,84
-Boise,43,116
-Chicago,41,87
-Indianapolis,39,86
-New Orleans,29,90
-Baltimore,39,76
-Boston,42,71
-Detroit,42,83
-Minneapolis,44,93
-St Louis,38,90
-Las Vegas,36,115
-Trenton,40,74
-Albuquerque,35,106
-New York,40,73
-Charlotte,35,80
-Cincinnati,39,84
-Portland,45,122
-Philadelphia,39,75
-Charleston,32,79
-Nashville,36,86
-Austin,30,97
-Dallas,32,96
-Houston,29,95
-San Antonio,29,98
-Salt Lake CIty,40,111
-Richmond,37,77
-Seattle,47,122
-Milwaukee,42,87
+Phoenix,33,112,1.63
+Tucson,32,110,0.531
+Little Rock,34,92,0.199
+Los Angeles,33,118,4.03
+San Jose,37,121,1.03
+San Diego,32,117,1.41
+San Fransisco,37,122,0.884
+Denver,39,104,0.705
+Washington D.C.,38,77,0.702
+Miami,25,80,0.454
+Tampa,27,82,0.377
+Atlanta,33,84,0.486
+Boise,43,116,0.223
+Chicago,41,87,2.7
+Indianapolis,39,86,0.863
+New Orleans,29,90,0.392
+Baltimore,39,76,0.615
+Boston,42,71,0.673
+Detroit,42,83,0.673
+Minneapolis,44,93,0.414
+St Louis,38,90,0.309
+Las Vegas,36,115,0.648
+Trenton,40,74,0.084
+Albuquerque,35,106,0.559
+New York,40,73,8.54
+Charlotte,35,80,0.842
+Cincinnati,39,84,0.299
+Portland,45,122,0.64
+Philadelphia,39,75,1.58
+Charlotte,35,80,0.842
+Nashville,36,86,0.691
+Austin,30,97,0.948
+Dallas,32,96,1.32
+Houston,29,95,2.32
+San Antonio,29,98,1.51
+Salt Lake CIty,40,111,0.194
+Richmond,37,77,0.223
+Seattle,47,122,0.73
+Milwaukee,42,87,0.595
