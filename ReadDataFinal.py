@@ -15,25 +15,36 @@ def readData():
     index = 0
     with open('Latitude and Longitude of major us cities.csv') as csvfile:
         reader = csv.reader(csvfile)
-        Cities = np.zeros((total_row,))
+        Cities = []
         Latitude = np.zeros((total_row,))
         Longitude = np.zeros((total_row,))
         Population = np.zeros((total_row,))
         for row in reader:
-            #Cities[index] = str(row[0])
+            Cities.append(row[0])
             Latitude[index] = ((float(row[1]) - 25)/(47 - 25))
             Longitude[index] = ((float(row[2]) - 71)/(122 - 71))
             Population[index] = (float(row[3]) * (10 ** 6))
             line_count += 1
             index += 1
+        Longitude = Longitude * (-1)
         print("Cities: ")
-        #print(Cities)
+        print(Cities)
         print("Latitude: ")
         print(Latitude)
         print("Longitude: ")
         print(Longitude)
         print("Population: ")
         print(Population)
-    return (Latitude, Longitude, Population)
+    return (Cities, Latitude, Longitude, Population)
         
-(Latitude, Longitude, Population) = readData()
+Cities, Latitude, Longitude, Population = readData()
+
+def graphData(Latitude, Longitude):
+    plt.plot(Longitude, Latitude, 'g.', label = 'Cities')
+    plt.legend()
+    plt.ylabel('Latitude')
+    plt.xlabel('Longitude')
+    plt.suptitle('Map of US Cities')
+    plt.show()
+    
+graphData(Latitude, Longitude)
