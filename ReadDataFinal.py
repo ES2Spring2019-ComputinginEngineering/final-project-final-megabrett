@@ -39,7 +39,13 @@ def readData():
         
 Cities, Latitude, Longitude, Population = readData()
 
-def graphData(Latitude, Longitude):
+test_lat = input("What is the latitude of the point you want to test? (Choose a point between 25 and 47) ")
+test_lat = ((float(test_lat) - 25)/(47-25))
+test_lon = input("What is the longitude of the point you want to test? (Choose a point between 71 and 122) ")
+test_lon = (-1) * ((float(test_lon) - 71)/(122 - 71))
+
+def graphData(Latitude, Longitude, test_lon, test_lat):
+    plt.plot(test_lon, test_lat, 'r.', label = 'Test Point')
     plt.plot(Longitude, Latitude, 'g.', label = 'Cities')
     plt.legend()
     plt.ylabel('Latitude')
@@ -47,4 +53,5 @@ def graphData(Latitude, Longitude):
     plt.suptitle('Map of US Cities')
     plt.show()
     
-graphData(Latitude, Longitude)
+graphData(Latitude, Longitude, test_lon, test_lat)
+
