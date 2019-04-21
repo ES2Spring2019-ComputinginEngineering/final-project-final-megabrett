@@ -1,5 +1,5 @@
 # Getting Energy Usage/Person
-import numpy as np
+import matplotlib.pyplot as plt
 
 def createEnergyandCityLists():
     cities = []
@@ -28,8 +28,18 @@ def createEnergyandCityLists():
     print("energy per person list is: "+str(energy_per_person))
     return cities, city_energy, pop, energy_per_person
     
-createEnergyandCityLists()
+cities, city_energy, pop, energy_per_person = createEnergyandCityLists()
 
 def graphEnergyData(cities, city_energy, energy_per_person):
-    
+    x = 0,1,2,3,4,5,6,7,8,9,10,11,12,13
+    plt.figure(figsize=(15, 5))
+    plt.bar(x, energy_per_person, align='center', tick_label=cities)
+    xlabel = plt.xlabel("Cities")
+    xlabel.set_color("red")
+    ylabel = plt.ylabel("Energy Use/Person (MegaWatts)")
+    ylabel.set_color("red")
+    title = plt.title("Energy Usage per Person in Major Cities")
+    title.set_color("green")
     return
+
+graphEnergyData(cities, city_energy, energy_per_person)
