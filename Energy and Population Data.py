@@ -40,6 +40,6 @@ def graphEnergyData(cities, city_energy, energy_per_person):
     ylabel.set_color("red")
     title = plt.title("Energy Usage per Person in Major Cities")
     title.set_color("green")
-    return
+    plt.show()
 
 graphEnergyData(cities, city_energy, energy_per_person)
