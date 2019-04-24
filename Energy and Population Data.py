@@ -21,7 +21,7 @@ def createEnergyandCityLists():
     i = 0  # counter
     while i < len(city_energy):
         energy = city_energy[i]
-        population = pop[i]*100000  # gives exact population
+        population = pop[i]*1000000  # gives exact population
         en_use_per_person = (energy/population)*1000  # gives energy use per person in megawatts
         energy_per_person.append(en_use_per_person)
         i += 1
@@ -40,6 +40,6 @@ def graphEnergyData(cities, city_energy, energy_per_person):
     ylabel.set_color("red")
     title = plt.title("Energy Usage per Person in Major Cities")
     title.set_color("green")
-    return
+    plt.show()
 
 graphEnergyData(cities, city_energy, energy_per_person)
