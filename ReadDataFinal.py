@@ -48,6 +48,28 @@ test_lat = ((float(test_lat) - 25)/(47-25))
 test_lon = input("What is the longitude of the point you want to test? (Choose a point between 71 and 122) ")
 test_lon = (-1) * ((float(test_lon) - 71)/(122 - 71))
 
+
+def kNearestNeighborClassifier(k, Cities, Latitude, Longitude, Population, test_lon, test_lat):
+    distancesKN = np.zeros(len(Population))
+    distancesKN = np.sqrt((Longitude - test_lon)**2+(Latitude - test_lat)**2)
+    sorted_indices = np.argsort(distancesKN)
+    k_indices = sorted_indices[:k]
+    print(sorted_indices)
+    print(k_indices)
+    index = 0
+    Kpop = np.zeros(len(k_indices))
+    for i in k_indices:
+        Kpop[index] = Population[k_indices[index]]
+        index += 1
+    Kpopval = sum(Kpop)
+    print(Kpop)
+    print("The population of the " + str(k) + " nearest cities is: " + str(Kpopval))
+    return (distancesKN, k_indices, Kpop, Kpopval)
+
+distancesKN, k_indices, Kpop, Kpopval = kNearestNeighborClassifier(5, Cities, Latitude, Longitude, Population, test_lon, test_lat)
+monthlybtu = Kpopval * (320000000/12)
+print("The estimated Btu production to power these cities for a month would be " + str(monthlybtu) + " Btu.")
+
 def graphData(Latitude, Longitude, test_lon, test_lat):
     plt.plot(test_lon, test_lat, 'r.', label = 'Test Point')
     plt.plot(Longitude, Latitude, 'g.', label = 'Cities')
