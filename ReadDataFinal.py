@@ -48,6 +48,7 @@ test_lat = input("What is the latitude of the point you want to test? (Choose a 
 test_lat = ((float(test_lat) - 25)/(47-25))
 test_lon = input("What is the longitude of the point you want to test? (Choose a point between 71 and 122) ")
 test_lon = (-1) * ((float(test_lon) - 71)/(122 - 71))
+K = int(input("What is your desired K value (How many nearby cities wouldd you like to power?)"))
 
 ###Finds the k nearest cities to your test point's coordinates
 def kNearestNeighborClassifier(k, Cities, Latitude, Longitude, Population, test_lon, test_lat):
@@ -67,7 +68,7 @@ def kNearestNeighborClassifier(k, Cities, Latitude, Longitude, Population, test_
     print("The population of the " + str(k) + " nearest cities is: " + str(Kpopval))
     return (distancesKN, k_indices, Kpop, Kpopval)
 
-distancesKN, k_indices, Kpop, Kpopval = kNearestNeighborClassifier(5, Cities, Latitude, Longitude, Population, test_lon, test_lat)
+distancesKN, k_indices, Kpop, Kpopval = kNearestNeighborClassifier(K, Cities, Latitude, Longitude, Population, test_lon, test_lat)
 #following line calculates monthly btu to power knearest cities
 monthlybtu = Kpopval * (320000000/12)
 print("The estimated Btu production to power these cities for a month would be " + str(monthlybtu) + " Btu.")
