@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 csv_file = open('Latitude and Longitude of major us cities.csv')
 total_row = sum(1 for row in csv_file)
 
-def readData():
+def readData(): ###Reads the file that you set as csv_file and write in line 16
     line_count = 0
     index = 0
     with open('Latitude and Longitude of major us cities.csv') as csvfile:
@@ -43,12 +43,13 @@ def readData():
         
 Cities, Latitude, Longitude, Population, B_T_U = readData()
 
+###Following 4 lines ask for and set latitude and longitude points of the area you want to test
 test_lat = input("What is the latitude of the point you want to test? (Choose a point between 25 and 47) ")
 test_lat = ((float(test_lat) - 25)/(47-25))
 test_lon = input("What is the longitude of the point you want to test? (Choose a point between 71 and 122) ")
 test_lon = (-1) * ((float(test_lon) - 71)/(122 - 71))
 
-
+###Finds the k nearest cities to your test point's coordinates
 def kNearestNeighborClassifier(k, Cities, Latitude, Longitude, Population, test_lon, test_lat):
     distancesKN = np.zeros(len(Population))
     distancesKN = np.sqrt((Longitude - test_lon)**2+(Latitude - test_lat)**2)
@@ -67,9 +68,11 @@ def kNearestNeighborClassifier(k, Cities, Latitude, Longitude, Population, test_
     return (distancesKN, k_indices, Kpop, Kpopval)
 
 distancesKN, k_indices, Kpop, Kpopval = kNearestNeighborClassifier(5, Cities, Latitude, Longitude, Population, test_lon, test_lat)
+#following line calculates monthly btu to power knearest cities
 monthlybtu = Kpopval * (320000000/12)
 print("The estimated Btu production to power these cities for a month would be " + str(monthlybtu) + " Btu.")
 
+#following graphs the cities and test point
 def graphData(Latitude, Longitude, test_lon, test_lat):
     plt.plot(test_lon, test_lat, 'r.', label = 'Test Point')
     plt.plot(Longitude, Latitude, 'g.', label = 'Cities')
