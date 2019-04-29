@@ -2,7 +2,6 @@
 """
 Created on Wed Apr 24 00:53:57 2019
 
-@author: Megan
 """
 import numpy as np
 import ReadDataFinal as rd
@@ -25,3 +24,4 @@ def latsAndLonsofPowerPlants():
     return energy, latitudes, longitudes
 
 energy, latitudes, longitudes = latsAndLonsofPowerPlants()
+
