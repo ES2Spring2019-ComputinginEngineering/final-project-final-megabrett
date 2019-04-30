@@ -47,6 +47,27 @@ def cityClassifications(cities, city_lats, city_longs, plant_lats, plant_longs):
     return city_classifications
 
 def productionUsageComparison(cities, city_classifications, plant_energy_prod, city_energy_usage):
-    
-    return
+    differences = []  #list of all monthly energy usage/production differences, gigawatts
+    j = 0
+    for j in range(0, len(cities)):  #going through cities list element by element (14 cities)
+        city_energy_prod = 0
+        indices = [i for i, x in enumerate(city_classifications) if x == cities[j]] 
+            #all indicies where city name shows up in city_classification
+        if indices == []:
+            print(str(cities[j])+" produces no energy, but uses "+str(city_energy_usage[j])+" gigawatts per month.")
+        else:
+            city_energy_prod = 0
+            k = 0
+            for k in range(0, len(indices)):
+                plant_prod = plant_energy_prod[indices[k]]  #energy produciton of plant at index k in indices list
+                city_energy_prod += plant_prod
+            difference = city_energy_usage[j] - city_energy_prod
+            differences.append(difference)
+            if difference > 0:
+                print(str(cities[j])+" uses "+str(abs(difference))+" more gigawatts of energy than it produces of nuclear energy per month.")
+            if difference < 0:
+                print(str(cities[j])+" produces "+str(abs(difference))+" more gigawatts of nuclear energy than it uses per month.")
+            if difference == 0:
+                print(str(cities[j])+" uses the same amount of energy as it produces of nuclear energy per month.")
+    return differences
 

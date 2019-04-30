@@ -38,4 +38,4 @@ rdf.graphData(Latitude, Longitude, test_lon, test_lat)
 ###gives the energy comparison for each city
 cities, city_lats, city_longs, plant_lats, plant_longs, plant_energy_prod, city_energy_usage = ecp.createLists()
 city_classifications = ecp.cityClassifications(cities, city_lats, city_longs, plant_lats, plant_longs)
-ecp.productionUsageComparison(cities, city_classifications, plant_energy_prod, city_energy_usage)
+difference = ecp.productionUsageComparison(cities, city_classifications, plant_energy_prod, city_energy_usage)
