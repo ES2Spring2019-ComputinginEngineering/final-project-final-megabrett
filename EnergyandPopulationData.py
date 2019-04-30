@@ -15,9 +15,6 @@ def createEnergyandCityLists():
         data_line[2] = data_line[2].strip("\n")  # get rid of \n character on end of each element
         pop.append(float(data_line[2]))  # add third element, population (millions of people), in order
     file.close()
-    print("cities list is: "+str(cities))
-    print("city energy list is: "+str(city_energy))
-    print("pop list is: "+str(pop))
     i = 0  # counter
     while i < len(city_energy):
         energy = city_energy[i]
@@ -25,10 +22,9 @@ def createEnergyandCityLists():
         en_use_per_person = (energy/population)*1000  # gives energy use per person in megawatts
         energy_per_person.append(en_use_per_person)
         i += 1
-    print("energy per person list is: "+str(energy_per_person))
     return cities, city_energy, pop, energy_per_person
     
-cities, city_energy, pop, energy_per_person = createEnergyandCityLists()
+#cities, city_energy, pop, energy_per_person = createEnergyandCityLists()
 
 def graphEnergyData(cities, city_energy, energy_per_person):
     x = 0,1,2,3,4,5,6,7,8,9,10,11,12,13
@@ -42,4 +38,4 @@ def graphEnergyData(cities, city_energy, energy_per_person):
     title.set_color("green")
     plt.show()
 
-graphEnergyData(cities, city_energy, energy_per_person)
+#graphEnergyData(cities, city_energy, energy_per_person)
