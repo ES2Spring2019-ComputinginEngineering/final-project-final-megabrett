@@ -27,8 +27,8 @@ def createLists():
     file2.close()
     return cities, city_lats, city_longs, plant_lats, plant_longs, plant_energy_prod, city_energy_usage
 
-def cityClassification(cities, city_lats, city_longs, plant_lats, plant_longs):
-    city_classifications = []
+def cityClassifications(cities, city_lats, city_longs, plant_lats, plant_longs):
+    city_classifications = []  #city at each index will correspond to the closest city to the plant at that index
     j = 0
     for j in range(0, len(plant_lats)):
         distances = []
@@ -46,7 +46,7 @@ def cityClassification(cities, city_lats, city_longs, plant_lats, plant_longs):
         j += 1
     return city_classifications
 
-def productionUsageComparison(city_classifications, plant_energy_prod, city_energy_usage):
+def productionUsageComparison(cities, city_classifications, plant_energy_prod, city_energy_usage):
     
     return
 
