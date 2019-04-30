@@ -54,7 +54,7 @@ def productionUsageComparison(cities, city_classifications, plant_energy_prod, c
         indices = [i for i, x in enumerate(city_classifications) if x == cities[j]] 
             #all indicies where city name shows up in city_classification
         if indices == []:
-            print(str(cities[j])+" produces no energy, but uses "+str(city_energy_usage[j])+" gigawatts per month.")
+            print(str(cities[j])+" produces no nuclear energy, but uses "+str(city_energy_usage[j])+" gigawatts per month.")
         else:
             city_energy_prod = 0
             k = 0
@@ -64,9 +64,9 @@ def productionUsageComparison(cities, city_classifications, plant_energy_prod, c
             difference = city_energy_usage[j] - city_energy_prod
             differences.append(difference)
             if difference > 0:
-                print(str(cities[j])+" uses "+str(abs(difference))+" more gigawatts of energy than it produces of nuclear energy per month.")
+                print(str(cities[j])+" uses "+str(abs(difference))+" more gigawatts of total energy than it produces of nuclear energy per month.")
             if difference < 0:
-                print(str(cities[j])+" produces "+str(abs(difference))+" more gigawatts of nuclear energy than it uses per month.")
+                print(str(cities[j])+" produces "+str(abs(difference))+" more gigawatts of nuclear energy than it uses of total energy per month.")
             if difference == 0:
                 print(str(cities[j])+" uses the same amount of energy as it produces of nuclear energy per month.")
     return differences
