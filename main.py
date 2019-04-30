@@ -8,6 +8,7 @@ might want to test this on a classmates computer to be sure it works!"""
 # IMPORT STATEMENTS
 import EnergyandPopulationData as epd
 import ReadDataFinal as rdf
+import EnergyComparisons as ecp
 
 # CODE
 
@@ -34,3 +35,7 @@ print("The estimated Btu production to power these cities for a month would be "
 #following graphs the cities and test point    
 rdf.graphData(Latitude, Longitude, test_lon, test_lat)
 
+###gives the energy comparison for each city
+city_lats, city_longs, plant_lats, plant_longs, plant_energy_prod, city_energy_usage = ecp.createLists()
+ecp.energyComparisons(city_lats, city_longs, plant_lats, plant_longs, 
+                      plant_energy_prod, city_energy_usage)
