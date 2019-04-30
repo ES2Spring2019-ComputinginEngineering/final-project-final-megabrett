@@ -6,13 +6,14 @@ might want to test this on a classmates computer to be sure it works!"""
 
 
 # IMPORT STATEMENTS
-
+import EnergyandPopulationData as epd
 import ReadDataFinal as rdf
 
-csv_file = open('Latitude and Longitude of major us cities.csv')
-total_row = sum(1 for row in csv_file)
-
 # CODE
+
+###Energy Usage per City
+cities, city_energy, pop, energy_per_person = epd.createEnergyandCityLists()
+epd.graphEnergyData(cities, city_energy, energy_per_person)
         
 Cities, Latitude, Longitude, Population, B_T_U = rdf.readData()
 
