@@ -36,6 +36,6 @@ print("The estimated Btu production to power these cities for a month would be "
 rdf.graphData(Latitude, Longitude, test_lon, test_lat)
 
 ###gives the energy comparison for each city
-city_lats, city_longs, plant_lats, plant_longs, plant_energy_prod, city_energy_usage = ecp.createLists()
-ecp.energyComparisons(city_lats, city_longs, plant_lats, plant_longs, 
-                      plant_energy_prod, city_energy_usage)
+cities, city_lats, city_longs, plant_lats, plant_longs, plant_energy_prod, city_energy_usage = ecp.createLists()
+city_classifications = ecp.cityClassification(cities, city_lats, city_longs, plant_lats, plant_longs)
+ecp.productionUsageComparison(city_classifications, plant_energy_prod, city_energy_usage)
