@@ -22,8 +22,8 @@ README - instructions
 main.py - the actual code that you need to run
 EnergyandPopulationData.py - functions for producing the graph that gives the energy usage per person in the 14 
     cities looked at
-ReadDataFinal.py - used for testing different functions without editing the actual final code. Could've been removed, but I wanted to show
-	the steps I took to create this project
+ReadDataFinal.py - Contains the functions for parsing "Latitude and Longitude of major us cities.csv", and carrying
+	out the knearest neighbor analysis of cities and their energy requirements
 EnergyComparisons.py - funcitons to find the comparison of energy consumption and energy produciton for
     each city
 Latitude and Longitude of major us cities.csv - spreadsheet including the coordinate and population data for major US cities
